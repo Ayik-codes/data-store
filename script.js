@@ -81,3 +81,21 @@ function deleteRow(index) {
   localStorage.setItem("topics", JSON.stringify(topics));
   refreshTable();  
 }
+
+function searchTopic() {
+  const searchInput = document.getElementById('search').value.toLowerCase();
+  const tableBody = document.getElementById('topicTable');
+  tableBody.innerHTML = ''; // Clear current table
+
+  topics.filter(topic => topic.name.toLowerCase().includes(searchInput)).forEach((topic, index) => {
+      let row = `<tr>
+          <td>${topic.name}</td>
+          <td><a href="${topic.link}" target="_blank">${topic.link}</a></td>
+          <td>
+              <button onclick="editTopic(${index})">Edit</button>
+              <button onclick="deleteTopic(${index})">Delete</button>
+          </td>
+      </tr>`;
+      tableBody.innerHTML += row;
+  });
+}
