@@ -85,7 +85,7 @@ function deleteRow(index) {
 function searchTopic() {
   const searchInput = document.getElementById('search').value.toLowerCase();
   const tableBody = document.getElementById('topicTable');
-  tableBody.innerHTML = ''; // Clear current table
+  tableBody.innerHTML = '';  
 
   topics.filter(topic => topic.name.toLowerCase().includes(searchInput)).forEach((topic, index) => {
       let row = `<tr>
@@ -99,3 +99,6 @@ function searchTopic() {
       tableBody.innerHTML += row;
   });
 }
+
+
+

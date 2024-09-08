@@ -12,14 +12,16 @@
 
   <h2>Topic List with Links</h2>
 
-  
-  <input type="text" id="topicName" placeholder="Enter Topic Name">
-  <input type="url" id="topicLink" placeholder="Enter Topic Link">
-  <button id="addButton" onclick="addOrUpdateTopic()">Add Topic</button>
   <div class="search-box">
     <label for="search">Search by Topic Name:</label>
     <input type="text" id="search" onkeyup="searchTopic()" placeholder="Enter topic name...">
   </div>
+
+  
+  <input type="text" id="topicName" placeholder="Enter Topic Name">
+  <input type="url" id="topicLink" placeholder="Enter Topic Link">
+  <button id="addButton" onclick="addOrUpdateTopic()">Add Topic</button>
+   
 
   
 
@@ -31,7 +33,7 @@
         <th>Actions</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody id="topicTable">
     </tbody>
   </table>
 
